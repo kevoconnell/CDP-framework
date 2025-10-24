@@ -104,6 +104,12 @@ export class Page implements IPage {
    * @description Returns the target ID of the page.
    *
    * @returns {String} The target ID of the page
+   *
+   * @example
+   * ```typescript
+   * const targetId = page.getTargetId();
+   * console.log(targetId);
+   * ```
    */
   getTargetId(): string {
     return this.targetId;
@@ -351,6 +357,11 @@ export class Page implements IPage {
    * @param text - Text to type.
    * @param options - Optional typing configuration (e.g., delay between characters).
    * @returns void
+   *
+   * @example
+   * ```typescript
+   * await page.type("Hello");
+   * ```
    */
   async type(text: string, options?: TypeOptions): Promise<void> {
     for (const char of text) {
@@ -386,15 +397,6 @@ export class Page implements IPage {
    * await page.close({ force: true });
    * console.log("Page closed");
    * ```
-   *
-   * @returns {Promise<void>} Resolves once Chrome acknowledges the target was closed.
-   * @throws {Error} When Chrome reports the target could not be closed.
-   *
-   * @example
-   * ```typescript
-   * await page.close();
-   * console.log("Page closed");
-   * ```
    */
   async close(): Promise<void> {
     try {
@@ -418,6 +420,12 @@ export class Page implements IPage {
    *
    * @param waitUntil - Lifecycle event to await.
    * @returns void
+   *
+   * @example
+   * ```typescript
+   * await page.waitForNavigation("load");
+   * console.log("Page loaded");
+   * ```
    */
   private async waitForNavigation(
     waitUntil: "load" | "domcontentloaded"
