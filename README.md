@@ -5,7 +5,12 @@ This is a lightweight framework to interface with the Chrome DevTools Protocol (
 
 
 
-**Example Usage:**
+**Usage:**
+
+First, install packages
+```bash
+npm i
+```
 
 Basic example:
 ```bash
