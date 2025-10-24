@@ -54,7 +54,7 @@ Looking at this diagram, there are a couple of things I want to point out:
 
 Overall, the relationship between Browser -> Page -> CDPConnection is as follows:
 
-- Browser has one connection to CDPConnection -> this is for chrome operations.
+- Browser has one connection to CDPConnection -> this is to communicate with CDP DevTools.
 
 - Browser can have many connections to Page, a page has one connection to CDPConnection -> this is to handle Page events.
 
