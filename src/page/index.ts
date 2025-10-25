@@ -407,6 +407,8 @@ export class Page implements IPage {
       if (!result.success) {
         throw new Error(`Failed to close target ${this.targetId}`);
       }
+
+      await this.connection.close();
     } catch (error) {
       throw new Error(
         `Failed to close target ${this.targetId}: ${(error as Error).message}`

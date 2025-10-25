@@ -1,4 +1,4 @@
-import { Browser } from "../src/browser/index.js";
+import { Browser } from "../src";
 
 const browser = new Browser();
 await browser.launch({ headless: true });

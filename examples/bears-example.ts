@@ -1,4 +1,4 @@
-import { Browser } from "../src/browser/index.js";
+import { Browser } from "../src";
 
 // Helper function to extract team data
 const extractTeamData = (html: string) => {
