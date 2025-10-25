@@ -182,7 +182,7 @@ export class CDPConnection extends EventEmitter implements ICDPConnection {
    * @name close
    * @description Closes the connection to the Chrome DevTools Protocol.
    *
-   * @returns {void}
+   * @returns {Promise<void>}
    *
    * @example
    * ```typescript

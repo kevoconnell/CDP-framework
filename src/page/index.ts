@@ -34,7 +34,7 @@ export class Page implements IPage {
    *
    * @param event - CDP event name to listen for (e.g., `"Page.loadEventFired"`).
    * @param handler - Callback invoked with the event payload.
-   * @returns This `Page` instance for chaining.
+   * @returns {Page} this
    *
    * @example
    * ```typescript
@@ -356,7 +356,7 @@ export class Page implements IPage {
    *
    * @param text - Text to type.
    * @param options - Optional typing configuration (e.g., delay between characters).
-   * @returns void
+   * @returns {Promise<void>}
    *
    * @example
    * ```typescript
@@ -421,7 +421,7 @@ export class Page implements IPage {
    * @description Waits for either the load or DOMContentLoaded lifecycle event.
    *
    * @param waitUntil - Lifecycle event to await.
-   * @returns void
+   * @returns {Promise<void>}
    *
    * @example
    * ```typescript

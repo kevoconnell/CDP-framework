@@ -175,6 +175,7 @@ export class Browser implements IBrowser {
    * Sends `Target.closeTarget` for the given identifier.
    *
    * @param targetId - Identifier of the target to close.
+   * @returns {Promise<void>}
    * @throws {BrowserNotConnectedError} If the root connection is unavailable.
    * @throws {TargetClosedError} When Chrome reports the target could not be closed.
    *
