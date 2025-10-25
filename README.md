@@ -1,9 +1,6 @@
-# CDP Browser Framework Examples
+# Chrome DevTools Protocol framework
 
 This is a lightweight framework to interface with the Chrome DevTools Protocol (CDP) directly.
-
-
-
 
 **Usage:**
 
