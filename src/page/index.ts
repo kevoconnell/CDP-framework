@@ -290,6 +290,10 @@ export class Page implements IPage {
       throw new ElementNotFoundError(selector, this.targetId);
     }
 
+    await this.connection.send("DOM.scrollIntoViewIfNeeded", {
+      nodeId,
+    });
+
     const { model } = await this.connection.send("DOM.getBoxModel", {
       nodeId,
     });
