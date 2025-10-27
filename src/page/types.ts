@@ -31,6 +31,17 @@ export interface ScreenshotOptions
 export type EvaluateResult =
   ProtocolMapping.Commands["Runtime.evaluate"]["returnType"]["result"]["value"];
 
+export interface ScrollOptions {
+  /**
+   * Horizontal scroll delta in pixels.
+   */
+  deltaX?: number;
+  /**
+   * Vertical scroll delta in pixels.
+   */
+  deltaY?: number;
+}
+
 export interface IPage {
   goto(url: string, options?: NavigationOptions): Promise<void>;
   content(): Promise<string>;
@@ -39,5 +50,6 @@ export interface IPage {
   click(selector: string): Promise<void>;
   press(key: string): Promise<void>;
   type(text: string): Promise<void>;
+  scroll(options: ScrollOptions): Promise<void>;
   close(): Promise<void>;
 }

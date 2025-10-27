@@ -9,6 +9,7 @@ import {
   IPage,
   NavigationOptions,
   ScreenshotOptions,
+  ScrollOptions,
   TypeOptions,
 } from "./types.js";
 import {
@@ -385,6 +386,36 @@ export class Page implements IPage {
         await new Promise((resolve) => setTimeout(resolve, options.delay));
       }
     }
+  }
+
+  /**
+   * @name scroll
+   * @description Scrolls the page by the specified delta amounts.
+   *
+   * @param options - Scroll configuration with deltaX and/or deltaY.
+   * @returns {Promise<void>}
+   *
+   * @example
+   * ```typescript
+   * // Scroll down by 500 pixels
+   * await page.scroll({ deltaY: 500 });
+   *
+   * // Scroll up by 200 pixels
+   * await page.scroll({ deltaY: -200 });
+   *
+   * // Scroll right by 100 pixels and down by 500 pixels
+   * await page.scroll({ deltaX: 100, deltaY: 500 });
+   * ```
+   */
+  async scroll(options: ScrollOptions): Promise<void> {
+    const deltaX = options.deltaX ?? 0;
+    const deltaY = options.deltaY ?? 0;
+
+    await this.connection.send("Input.dispatchMouseEvent", {
+      type: "mouseWheel",
+      deltaX,
+      deltaY,
+    });
   }
 
   /**

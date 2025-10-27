@@ -17,10 +17,14 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "@openai/agents": "^0.2.1",
     "chrome-launcher": "^1.2.1",
     "devtools-protocol": "^0.0.1534754",
+    "dotenv": "^17.2.3",
     "keycode": "^2.2.1",
-    "ws": "^8.18.3"
+    "openai": "^6.7.0",
+    "ws": "^8.18.3",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^24.9.1",
